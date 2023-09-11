@@ -18,10 +18,11 @@ const MyForm: React.FC = () => {
 
   return (
     <form 
+    className="form"
     onSubmit={handleSubmit}
     >
-      <div >
-        <label htmlFor='name'>Name</label>
+      <div className="formField">
+        <label className="label" htmlFor='name'>Name</label>
         <input
           type="text"
           name="name"
@@ -30,11 +31,12 @@ const MyForm: React.FC = () => {
           onChange={handleChange}
           onBlur={handleBlur}
           data-testid="name"
+          className="input"
         />
         {touched.name && errors.name && <div className="error" data-testid="name-error">{errors.name}</div>}
       </div>
-      <div>
-        <label htmlFor='email'>Email</label>
+      <div className="formField">
+        <label className="label" htmlFor='email'>Email</label>
         <input
           type="text"
           name="email"
@@ -43,11 +45,12 @@ const MyForm: React.FC = () => {
           onChange={handleChange}
           onBlur={handleBlur}
           data-testid="email"
+          className="input"
         />
         {touched.email && errors.email && <div className="error" data-testid="email-error">{errors.email}</div>}
       </div>
-      <div>
-        <label htmlFor='password'>Password</label>
+      <div className="formField">
+        <label className="label" htmlFor='password'>Password</label>
         <input
           type="password" // Use 'password' type for password input
           name="password"
@@ -56,6 +59,7 @@ const MyForm: React.FC = () => {
           onChange={handleChange}
           onBlur={handleBlur}
           data-testid="password"
+          className="input"
         />
         {touched.password && errors.password && <div className="error" >{errors.password}</div>}
       </div>
@@ -63,9 +67,11 @@ const MyForm: React.FC = () => {
       <button 
       type="submit"
       data-testid="submit-button"
+      className="button"
       >
         Submit
       </button>
+
     </form>
   );
 };
