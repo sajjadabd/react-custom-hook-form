@@ -7,7 +7,7 @@ import '@testing-library/jest-dom'
 test('Form renders correctly and initializes fields', () => {
   render(<MyForm />);
 
-  const nameInput = screen.getByTestId('name') as HTMLInputElement;
+  const nameInput = screen.getByTestId('username') as HTMLInputElement;
   const emailInput = screen.getByTestId('email') as HTMLInputElement;
 
   expect(nameInput.value).toBe('');
@@ -18,7 +18,7 @@ test('Form renders correctly and initializes fields', () => {
 test('Form validation shows error messages', () => {
   render(<MyForm />);
 
-  const nameInput = screen.getByTestId('name') as HTMLInputElement;
+  const nameInput = screen.getByTestId('username') as HTMLInputElement;
   const emailInput = screen.getByTestId('email') as HTMLInputElement;
 
   fireEvent.change(nameInput, { target: { value: '' } });
