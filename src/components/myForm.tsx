@@ -32,6 +32,7 @@ const MyForm: React.FC = () => {
           onBlur={handleBlur}
           data-testid="username"
           className="input"
+          autoComplete="off"
         />
         {touched.username && errors.username && <div className="error" data-testid="username-error">{errors.username}</div>}
       </div>
@@ -46,6 +47,7 @@ const MyForm: React.FC = () => {
           onBlur={handleBlur}
           data-testid="email"
           className="input"
+          autoComplete="off"
         />
         {touched.email && errors.email && <div className="error" data-testid="email-error">{errors.email}</div>}
       </div>
@@ -60,6 +62,7 @@ const MyForm: React.FC = () => {
           onBlur={handleBlur}
           data-testid="password"
           className="input"
+          autoComplete="off"
         />
         {touched.password && errors.password && <div className="error" >{errors.password}</div>}
       </div>
