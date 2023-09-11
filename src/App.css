@@ -1,9 +1,13 @@
+:root {
+  --font-size : 1.1em;
+}
+
 body {
   margin : 0;
   display : flex;
   justify-content: center;
   align-items: center;
-  min-width: 320px;
+  min-width: 420px;
   min-height: 100vh;
 }
 
@@ -28,14 +32,21 @@ label {
 .form {
   display : flex;
   flex-direction: column;
+  background-color: #101010;
+  padding : 30px;
+  border-radius: 10px;
+  min-width: 320px;
 }
 
 .label {
   grid-area : label;
+  font-size: var(--font-size);
 }
 
 .input {
   grid-area : input;
+  padding : 10px 10px;
+  font-size: var(--font-size);
 }
 
 .button {
@@ -51,10 +62,10 @@ label {
 
 .formField {
   display: grid;
-  grid-template-columns: 100px 1fr;
+  grid-template-columns: 1fr;
   grid-template-areas: 
-  "label input" 
-  "label error";
+  "input" 
+  "error";
   margin-bottom : 20px;
 }
 

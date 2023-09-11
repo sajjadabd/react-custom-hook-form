@@ -5,7 +5,7 @@ import ValidationSchema from '../validation/formValidation';
 const MyForm: React.FC = () => {
   const { values, errors, touched, handleChange, handleBlur, handleSubmit } = useForm(
     {
-      name: '',
+      username: '',
       email: '',
       password : '',
     },
@@ -22,25 +22,25 @@ const MyForm: React.FC = () => {
     onSubmit={handleSubmit}
     >
       <div className="formField">
-        <label className="label" htmlFor='name'>Name</label>
+        {/* <label className="label" htmlFor='name'>Name</label> */}
         <input
           type="text"
-          name="name"
-          placeholder='Name'
-          value={values.name}
+          name="username"
+          placeholder='username'
+          value={values.username}
           onChange={handleChange}
           onBlur={handleBlur}
-          data-testid="name"
+          data-testid="username"
           className="input"
         />
-        {touched.name && errors.name && <div className="error" data-testid="name-error">{errors.name}</div>}
+        {touched.username && errors.username && <div className="error" data-testid="username-error">{errors.username}</div>}
       </div>
       <div className="formField">
-        <label className="label" htmlFor='email'>Email</label>
+        {/* <label className="label" htmlFor='email'>Email</label> */}
         <input
           type="text"
           name="email"
-          placeholder='Email'
+          placeholder='email'
           value={values.email}
           onChange={handleChange}
           onBlur={handleBlur}
@@ -50,11 +50,11 @@ const MyForm: React.FC = () => {
         {touched.email && errors.email && <div className="error" data-testid="email-error">{errors.email}</div>}
       </div>
       <div className="formField">
-        <label className="label" htmlFor='password'>Password</label>
+        {/* <label className="label" htmlFor='password'>Password</label> */}
         <input
           type="password" // Use 'password' type for password input
           name="password"
-          placeholder='Password'
+          placeholder='password'
           value={values.password}
           onChange={handleChange}
           onBlur={handleBlur}
