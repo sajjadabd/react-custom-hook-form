@@ -23,8 +23,8 @@ const useForm = (
   onSubmit: (values: FormValues) => void
 ) => {
   const [values, setValues] = useState<FormValues>(initialValues);
-  const [errors, setErrors] = useState<FormErrors>({});
   const [touched, setTouched] = useState<FormValues>({});
+  const [errors, setErrors] = useState<FormErrors>({});
 
   useEffect(() => {
     validationSchema.validate(values, { abortEarly: false })

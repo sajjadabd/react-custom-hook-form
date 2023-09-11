@@ -1,20 +1,6 @@
-import * as yup from 'yup';
+
 import useForm from '../hooks/useForm'; 
-
-const validationSchema = yup.object().shape({
-  name: yup
-    .string()
-    .required('Name is required'),
-  email: yup
-    .string()
-    .email('Invalid email')
-    .required('Email is required'),
-  password: yup
-    .string()
-    .min(6, 'Password must be at least 6 characters')
-    .required('Password is required'),
-});
-
+import ValidationSchema from '../validation/formValidation';
 
 const MyForm: React.FC = () => {
   const { values, errors, touched, handleChange, handleBlur, handleSubmit } = useForm(
@@ -23,7 +9,7 @@ const MyForm: React.FC = () => {
       email: '',
       password : '',
     },
-    validationSchema,
+    ValidationSchema,
     (values) => {
       // Handle form submission here
       console.log('Form submitted with values:', values);
